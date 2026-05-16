@@ -15,7 +15,7 @@ function renderTrees(infoTree, container) {
       <p class="tree__text">${element.description}</p>
       <p class="tree__info">Де росте: <span class = "span"> ${element.location.join(", ")}</span> </p>
        </div>
-     <p class="tree__type"> ${element.rare ? ` <svg class="icon icon-star-svgrepo-com"><use href="./symbol-defs.svg#icon-star-svgrepo-com"></use> </svg> Рідкісне` : "Звичайне"}</p>
+     <p class="tree__type"> ${element.rare ? ` <svg class="icon icon-star-svgrepo-com"><use href="./img/symbol-defs.svg#icon-star-svgrepo-com"></use> </svg> Рідкісне` : "Звичайне"}</p>
     </atticle>
   </li>
             `);
@@ -31,3 +31,42 @@ text.forEach((item) => {
     }
 });
 
+//1
+const categories = document.querySelectorAll(".item");
+console.log(`У списку ${categories.length} категорії.`);
+
+console.log(categories)
+function searchCategories(arrItem, nameCategories) {
+  arrItem.forEach(element => {
+    if (element.firstElementChild.textContent === nameCategories) {
+      console.log(`Категорія: ${nameCategories}
+Кількість елементів: ${element.lastElementChild.querySelectorAll("li").length}`);
+    }
+})
+}
+searchCategories(categories, "Тварини");
+searchCategories(categories, "Продукти");
+searchCategories(categories, "Технології");
+
+//2
+const ingredients = [
+  "Картопля",
+  "Гриби",
+  "Часник",
+  "Помідори",
+  "Зелень",
+  "Приправи",
+];
+const listIngredients = document.querySelector("#ingredients");
+const ingredientsAll = [];
+
+ingredients.forEach(element => {
+  const itemIngredient = document.createElement("li");
+  const textIngredient = document.createElement("p");
+  itemIngredient.append(textIngredient);
+  itemIngredient.classList.add("item__ingredients");
+  textIngredient.classList.add("text__ingredients");
+  textIngredient.textContent = element;
+  ingredientsAll.push(itemIngredient);
+});
+listIngredients.append(...ingredientsAll);

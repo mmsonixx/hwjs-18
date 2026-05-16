@@ -1,0 +1,73 @@
+.title__ingredients {
+   color: rgb(32, 31, 31);
+  font-size: 40px;
+  text-align: center;
+    /* background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 38px,
+    rgb(100, 98, 98) 39px
+  ); */
+     font-family: "Great Vibes", cursive;
+}
+.wrapper__recipe{
+  padding-bottom: 100px;
+}
+.recipe {
+position: relative;
+  width: 500px;
+  height: 600px;
+  margin: 0 auto;
+ 
+  border-radius: 10px;
+  padding: 15px;
+  background-color: bisque;
+  background-image: linear-gradient(
+      to right,
+      transparent calc(100% - 60px),
+      red calc(100% - 60px),
+      red calc(100% - 59px),
+      transparent calc(100% - 59px)
+    ),
+     repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 43px,
+    rgba(120, 120, 120, 0.5) 45px
+  );
+  background-position: 0 52px;
+}
+.recipe::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  top: 350px;
+  right: 60px;
+
+  background-image: url("https://cdn-icons-png.flaticon.com/512/833/833472.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+#ingredients{
+  display: flex;
+  flex-direction: column;
+}
+
+.item__ingredients{
+
+}
+.text__ingredients{
+    color: rgb(32, 31, 31);
+  font-size: 35px;
+  font-family: "Great Vibes", cursive;
+
+  border: none;
+}
