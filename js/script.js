@@ -70,3 +70,45 @@ ingredients.forEach(element => {
   ingredientsAll.push(itemIngredient);
 });
 listIngredients.append(...ingredientsAll);
+
+//3
+const images = [
+  {
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
+  },
+  {
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+  },
+  {
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
+  },
+];
+
+const listGallery = document.querySelector('#gallery');
+function renderImages(imges, container) {
+  const html = imges.reduce((acc, element) => { 
+    return (acc += `
+       <li class="gallery__item"> <img class = "gallery__img" src="${element.url}" alt="${element.alt}"></li>
+      `);
+  }, "");
+  container.insertAdjacentHTML('beforeend',html);
+}
+renderImages(images, listGallery);
+
+//4
+let count = 0;
+const counterEl = document.querySelector("#value");
+const incrementBtn = document.querySelector('[data-action="increment"]');
+const decrementBtn = document.querySelector('[data-action= "decrement"]');
+  incrementBtn.addEventListener("click", () => {
+    count++;
+    counterEl.textContent = count;
+  });
+
+  decrementBtn.addEventListener("click", () => {
+    count--;
+    counterEl.textContent = count;
+  });

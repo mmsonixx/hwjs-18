@@ -390,4 +390,62 @@ body {
   font-size: 35px;
   font-family: "Great Vibes", cursive;
   border: none;
+}
+
+#gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery__img {
+  width: 500px;
+  height: 300px;
+}
+
+#counter {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 250px;
+  margin: 100px auto;
+  padding: 25px 35px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-action=decrement],
+[data-action=increment] {
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #7c5cff, #5b3df5);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-action=decrement]:hover,
+[data-action=increment]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(124, 92, 255, 0.5);
+}
+
+[data-action=decrement]:active,
+[data-action=increment]:active {
+  transform: scale(0.95);
+}
+
+#value {
+  min-width: 80px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
